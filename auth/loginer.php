@@ -2,7 +2,6 @@
 	require '../vendor/autoload.php';
 	if ((!isset($_POST['username'])) || (!isset($_POST['password']))) {
 		header('location:login.php');
-		return;
 	}
 	session_start();
 	use Redis\Redis;

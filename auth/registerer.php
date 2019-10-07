@@ -2,7 +2,6 @@
 	require '../vendor/autoload.php';
 	if ((!isset($_POST['username'])) || (!isset($_POST['password'])) || (!isset($_POST['email']))) {
 		header('location:signup.php');
-		return;
 	}
 	use Redis\Redis;
 	$redis=Redis::connect();
