@@ -8,7 +8,8 @@
 </head>
 <body>
 	<?php if (isset($_SESSION['username'])) { ?>
-		<a type="button" class="btn btn-warning profile-btn" href="auth/signUp.php">Profile</a>
+		<a type="button" class="btn btn-dark logout-btn" href="auth/logout.php">Logout</a>
+		<a type="button" class="btn btn-warning profile-btn" href="profile.php">Profile</a>
 	<?php }else{ ?>
 		<a type="button" class="btn btn-dark login-btn" href="auth/login.php">Login</a>
 		<a type="button" class="btn btn-warning signup-btn" href="auth/signUp.php">SignUp</a>
