@@ -11,3 +11,8 @@ body{
 	margin-top: 10px;
 	margin-right: 15px;	
 }
+.alert{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+}
