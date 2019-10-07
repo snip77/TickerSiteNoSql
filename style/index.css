@@ -1,0 +1,13 @@
+body{
+	background-image: linear-gradient(to left, #e5e5e5 , #c5c3c6);
+}
+.login-btn, .profile-btn{
+	float: right;
+	margin-top: 10px;
+	margin-right: 15px;
+}
+.signup-btn{
+	float: right;
+	margin-top: 10px;
+	margin-right: 15px;	
+}
