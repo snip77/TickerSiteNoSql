@@ -16,3 +16,23 @@ body{
 	margin-left: 10%;
 	margin-top: 20px;
 }
+.title{
+	margin-left: 10%;
+	margin-top: 5%;
+	display: flex;
+}
+.little-title{
+	margin-top: 0.6%;
+}
+.big-title{
+	margin-left: 0.3%;
+}
+.empty-title{
+	padding-left: 49%;
+	padding-top: 19%;
+	width: 100%;
+	display: flex;	
+}
+.empty-little-title{
+	margin-top: 0.8%;
+}

@@ -28,6 +28,12 @@
 	<form class="form" action="inserter.php" method="POST">
 	  <div class="form-group">
 	    <label for="from">From</label>
+	    <select class="browser-default custom-select custom-select-lg mb-3">
+		  <option selected>Open this select menu</option>
+		  <option value="1">One</option>
+		  <option value="2">Two</option>
+		  <option value="3">Three</option>
+		</select>
 	    <input name="from" type="text" class="form-control" id="from" placeholder="From">
 	  </div>
 	  <div class="form-group">

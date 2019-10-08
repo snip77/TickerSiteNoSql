@@ -1,5 +1,4 @@
 <?php
-
 	if (
 		(!isset($_POST['from']))||
 		(!isset($_POST['to']))||
@@ -20,6 +19,14 @@
 		"price"=>$_POST["price"],
 		"capacity"=>$_POST["capacity"]
 	];
-	var_dump($travel_data);
-	// $redis->set($travelCode, json_encode($travel_data))
+	$redis->set($travelCode, json_encode($travel_data));
+	$recentTravels=$redis->get('Recent Travels');
+	if (is_null($recentTravels)) {
+		$recentTravels=[];
+	}else{
+		$recentTravels=json_decode($recentTravels, true);
+	}
+	$recentTravels[$travelCode]=$travel_data;
+	$redis->set('Recent Travels', json_encode($recentTravels));
+	header("location:../index.php?message=travel created");
 ?>

@@ -11,11 +11,11 @@
 	<link rel="stylesheet" type="text/css" href="../style/bootstrap.css">
 </head>
 <body>
-	<?php if (isset($_GET['error'])) { ?>
+	<?php if (isset($_GET['error'])): ?>
 		<div class="alert alert-danger alrt" role="alert">
-		  <?php echo $_GET['error'];?>
+		  <?= $_GET['error'] ?>
 		</div>
-	<?php } ?>
+	<?php endif ?>
 	<form class="form"action="registerer.php" method="POST">
 	  <div class="form-group">
 	    <label for="username">Username</label>
