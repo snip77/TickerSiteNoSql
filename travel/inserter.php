@@ -3,6 +3,7 @@
 		(!isset($_POST['from']))||
 		(!isset($_POST['to']))||
 		(!isset($_POST['time']))||
+		(!isset($_POST['date']))||
 		(!isset($_POST['price']))||
 		(!isset($_POST['capacity']))
 		) {
@@ -15,6 +16,7 @@
 	$travel_data=[
 		"to"=>$_POST["to"],
 		"from"=>$_POST["from"],
+		"date"=>$_POST["date"],
 		"time"=>$_POST["time"],
 		"price"=>$_POST["price"],
 		"capacity"=>$_POST["capacity"]

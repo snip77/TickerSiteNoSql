@@ -36,3 +36,13 @@ body{
 .empty-little-title{
 	margin-top: 0.8%;
 }
+.card{
+	margin-left: 12%;
+}
+.buy-btn{
+	float: right;
+}
+.travel-info{
+	display: flex;
+	justify-content: space-between;
+}
