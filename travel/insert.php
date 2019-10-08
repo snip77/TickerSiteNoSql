@@ -30,14 +30,14 @@
 	    <label for="from">From</label>
 	    <select class="browser-default custom-select custom-select-lg mb-3" name="from">
 		  <option selected>Select city</option>
-			<?php  require '../cities.php';?>
+			<?php  require '../helpers/cities.php';?>
 		</select>
 	  </div>
 	  <div class="form-group">
 	    <label for="to">To</label>
 	    <select class="browser-default custom-select custom-select-lg mb-3" name="to">
 		  <option selected>Select city</option>
-			<?php  require '../cities.php';?>
+			<?php  require '../helpers/cities.php';?>
 		</select>
 	  </div>
 	  <div class="form-group">
@@ -46,7 +46,16 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="time">time</label>
-	    <input name="time" type="text" class="form-control" id="time" placeholder="time">
+	    <div style="display: flex;">
+	    	<select class="browser-default custom-select custom-select-lg mb-3" name="time-hour">
+			  <option selected>Hours</option>
+				<?php  require '../helpers/hours.php';?>
+			</select>
+			<select class="browser-default custom-select custom-select-lg mb-3" name="time-minute">
+			  <option selected>Minutes</option>
+				<?php  require '../helpers/minutes.php';?>
+			</select>
+	    </div>
 	  </div>
 	  <div class="form-group">
 	    <label for="price">price</label>
@@ -58,5 +67,7 @@
 	  </div>
 	  <button type="submit" class="btn btn-warning create-btn">Create</button>
 	</form>
+	<br>
+	<br>
 </body>
 </html>
