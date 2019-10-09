@@ -65,6 +65,23 @@
 	    <label for="capacity">capacity</label>
 	    <input name="capacity" type="text" class="form-control" id="capacity" placeholder="capacity">
 	  </div>
+			<select class="browser-default custom-select custom-select-lg mb-3" name="company_id">
+			  <option selected>Select company</option>
+			  	<?php
+			  	require '../vendor/autoload.php';
+			  	use Redis\Redis;
+			  	$redis=Redis::connect();
+			  	$companies=$redis->get('companies');
+			  	if (is_null($companies)) {
+			  		$companies=[];
+			  	}else{
+			  		$companies=json_decode($companies, true);
+			  	}
+			  	?>
+				<?php foreach ($companies as $company_id => $cpmpany_data): ?>
+					<option value="<?= $company_id ?>"><?= $cpmpany_data['name'] ?></option>
+				<?php endforeach ?>
+			</select>
 	  <button type="submit" class="btn btn-warning create-btn">Create</button>
 	</form>
 	<br>

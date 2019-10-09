@@ -5,6 +5,7 @@
 		(!isset($_POST['time-hour']))||
 		(!isset($_POST['time-minute']))||
 		(!isset($_POST['date']))||
+		(!isset($_POST['company_id']))||
 		(!isset($_POST['price']))||
 		(!isset($_POST['capacity']))
 		) {
@@ -25,7 +26,15 @@
 	$redis->set($travelCode, json_encode($travel_data));
 	$recentTravels=$redis->get('Recent Travels');
 	$fromtodate=$_POST['from'].'-'.$_POST['to'].'-'.$_POST['date'];
+	$date=explode('-', $_POST['date']);
+	$companyIdYearMonth=$_POST['company_id'].'-'.$date[0].'-'.$date[1];
 	$fromToDateTravels=$redis->get($fromtodate);
+	$companyIdYearMonthTravels=$redis->get($companyIdYearMonth);
+	if (is_null($companyIdYearMonthTravels)) {
+		$companyIdYearMonthTravels=[];
+	}else{
+		$companyIdYearMonthTravels=json_decode($companyIdYearMonthTravels, true);
+	}
 	if (is_null($recentTravels)) {
 		$recentTravels=[];
 	}else{
@@ -38,7 +47,9 @@
 	}
 	$recentTravels[$travelCode]=$travel_data;
 	$fromToDateTravels[$travelCode]=$travel_data;
+	$companyIdYearMonthTravels[$travelCode]=$travel_data;
 	$redis->set($fromtodate, json_encode($fromToDateTravels));
 	$redis->set('Recent Travels', json_encode($recentTravels));
+	$redis->set($companyIdYearMonth, json_encode($companyIdYearMonthTravels));
 	header("location:../index.php?message=travel created");
 ?>
