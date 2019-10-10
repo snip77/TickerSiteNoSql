@@ -1,4 +1,7 @@
 <?php
+
+use Helper\Message;
+	require '../vendor/autoload.php';
 	if (
 		(!isset($_POST['from']))||
 		(!isset($_POST['to']))||
@@ -42,5 +45,6 @@
 	$redis->set('Recent Travels', json_encode($recentTravels));
 	$redis->set($companyIdYearMonth, json_encode($companyIdYearMonthTravels));
 	
-	header("location:../index.php?message=travel created");
+	Message::set('travel created');
+	header("location:../index.php");
 ?>

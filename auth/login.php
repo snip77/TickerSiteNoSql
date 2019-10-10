@@ -1,4 +1,7 @@
 <?php
+
+use Helper\Error;
+	require '../vendor/autoload.php';
 	session_start();
 	if (isset($_SESSION['username']))
 		header('location:../');
@@ -11,9 +14,9 @@
 	<link rel="stylesheet" type="text/css" href="../style/bootstrap.css">
 </head>
 <body>
-	<?php if (isset($_GET['error'])): ?>
+	<?php if (Error::has()): ?>
 		<div class="alert alert-danger alrt" role="alert">
-		  <?= $_GET['error'] ?>
+		  <?= Error::get() ?>
 		</div>
 	<?php endif ?>
 	<form class="form" action="loginer.php" method="POST">
@@ -25,7 +28,7 @@
 	    <label for="password">Password</label>
 	    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
 	  </div>
-	  <button type="submit" class="btn btn-warning login-btn">Login</button>
+	  <button type="submit" class="btn btn-warning login-btn">Log in</button>
 	</form>
 </body>
 </html>

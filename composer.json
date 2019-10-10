@@ -18,7 +18,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Redis\\": "redis/"
+            "Redis\\": "redis/",
+            "Helper\\": "helpers/"
         }
     },
     "config": {

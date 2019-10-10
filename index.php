@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+require 'vendor/autoload.php';
+use Helper\Error;
+use Helper\Message;
+use Redis\Redis;
+session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,27 +12,25 @@
 	<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 </head>
 <body>
-	<?php if (isset($_GET['error'])): ?>
+	<?php if (Error::has()): ?>
 		<div class="alert alert-danger alrt" role="alert">
-		  <?= $_GET['error'] ?>
+		  <?= Error::get() ?>
 		</div>
-	<?php elseif (isset($_GET['message'])):?>
+	<?php elseif (Message::has()):?>
 		<div class="alert alert-primary alrt" role="alert">
-		  <?= $_GET['message'] ?>
+		  <?= Message::get() ?>
 		</div>
 	<?php endif ?>
 	<?php if (isset($_SESSION['username'])): ?>
-		<a type="button" class="btn btn-dark logout-btn" href="auth/logout.php">Logout</a>
+		<a type="button" class="btn btn-dark logout-btn" href="auth/logout.php">Log out</a>
 		<a type="button" class="btn btn-warning profile-btn" href="travel/insert.php">Add Travel</a>
 		<a type="button" class="btn btn-danger profile-btn" href="travel/search.php">Search</a>
 	<?php else: ?>
-		<a type="button" class="btn btn-dark login-btn" href="auth/login.php">Login</a>
-		<a type="button" class="btn btn-warning signup-btn" href="auth/signUp.php">SignUp</a>
+		<a type="button" class="btn btn-dark login-btn" href="auth/login.php">Log in</a>
+		<a type="button" class="btn btn-warning signup-btn" href="auth/signUp.php">Sign Up</a>
 	<?php endif ?>
 	<br>
 	<?php
-		require 'vendor/autoload.php';
-		use Redis\Redis;
 		$redis=Redis::connect();
 		$recentTravels=Redis::getArray($redis, 'Recent Travels');
 		if (count($recentTravels)==0): ?>
