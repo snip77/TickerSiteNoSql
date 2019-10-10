@@ -29,8 +29,8 @@
 		require 'vendor/autoload.php';
 		use Redis\Redis;
 		$redis=Redis::connect();
-		$recentTravels=json_decode($redis->get('Recent Travels'), true);
-		if (is_null($recentTravels)): ?>
+		$recentTravels=Redis::getArray($redis, 'Recent Travels');
+		if (count($recentTravels)==0): ?>
 		<div class="empty-title">
 			<h2>N</h2>
 			<div class="empty-little-title">

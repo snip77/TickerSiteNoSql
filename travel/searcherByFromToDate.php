@@ -10,18 +10,14 @@ require '../vendor/autoload.php';
 use Redis\Redis;
 $redis=Redis::connect();
 $fromtodate=$_POST['from'].'-'.$_POST['to'].'-'.$_POST['date'];
-$response=$redis->get($fromtodate);
-if (is_null($response)) {
-	$response=[];
-}
-$response=json_decode($response, true);
+$response=Redis::getArray($redis, $fromtodate);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title><?= $fromtodate ?></title>
 	<link rel="stylesheet" type="text/css" href="../style/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../style/searchResponse.css">
+	<link rel="stylesheet" type="text/css" href="../style/searcherByFromToDate.css">
 </head>
 <body>
 	<br><br><br>

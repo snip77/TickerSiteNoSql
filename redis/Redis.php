@@ -12,4 +12,11 @@ class Redis
 		    'port'   => 6379,
 		]);
 	}
+
+	public static function getArray($redis, $key){
+		$data=$redis->get($key);
+		if (is_null($data))
+			return [];
+		return json_decode($data, true);
+	}
 }

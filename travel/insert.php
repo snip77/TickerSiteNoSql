@@ -71,14 +71,8 @@
 			  	require '../vendor/autoload.php';
 			  	use Redis\Redis;
 			  	$redis=Redis::connect();
-			  	$companies=$redis->get('companies');
-			  	if (is_null($companies)) {
-			  		$companies=[];
-			  	}else{
-			  		$companies=json_decode($companies, true);
-			  	}
-			  	?>
-				<?php foreach ($companies as $company_id => $cpmpany_data): ?>
+			  	$companies=Redis::getArray($redis, 'companies');
+			  	foreach ($companies as $company_id => $cpmpany_data): ?>
 					<option value="<?= $company_id ?>"><?= $cpmpany_data['name'] ?></option>
 				<?php endforeach ?>
 			</select>
