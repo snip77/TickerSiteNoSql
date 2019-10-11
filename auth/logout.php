@@ -1,5 +1,6 @@
 <?php
-	session_start();
-	unset($_SESSION['username']);
+	use Helper\Session;
+	require '..\vendor\autoload.php';
+	Session::delete('username');
 	header('location:../index.php');
 ?>

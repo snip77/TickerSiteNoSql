@@ -2,29 +2,24 @@
 
 namespace Helper;
 
-class Message
-{
-	public static function init(){
-		session_start();
-	}
+use Helper\Transfer;
 
+class Message implements Transfer
+{
 	public static function set($value)
 	{
-		static::init();	
-		$_SESSION['Message']=$value;
+		Session::set('Message', $value);
 	}
 
 	public static function get()
 	{
-		static::init();
-		$message=$_SESSION['Message'];
-		unset($_SESSION['Message']);
+		$message=Session::get('Message');
+		Session::delete('Message');
 		return $message;
 	}
 
 	public static function has()
 	{
-		static::init();
-		return isset($_SESSION['Message']);
+		return Session::isset('Message');
 	}
 }

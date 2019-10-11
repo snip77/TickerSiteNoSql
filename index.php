@@ -1,9 +1,10 @@
 <?php
 require 'vendor/autoload.php';
+use Redis\Redis;
 use Helper\Error;
 use Helper\Message;
-use Redis\Redis;
-session_start(); ?>
+use Helper\Session;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@ session_start(); ?>
 		  <?= Message::get() ?>
 		</div>
 	<?php endif ?>
-	<?php if (isset($_SESSION['username'])): ?>
+	<?php if (Session::isset('username')): ?>
 		<a type="button" class="btn btn-dark logout-btn" href="auth/logout.php">Log out</a>
 		<a type="button" class="btn btn-warning profile-btn" href="travel/insert.php">Add Travel</a>
 		<a type="button" class="btn btn-danger profile-btn" href="travel/search.php">Search</a>

@@ -1,10 +1,9 @@
 <?php
-
 use Helper\Error;
-	require '../vendor/autoload.php';
-	session_start();
-	if (isset($_SESSION['username']))
-		header('location:../');
+use Helper\Session;
+require '../vendor/autoload.php';
+if (Session::isset('username'))
+	header('location:../');
 ?>
 <!DOCTYPE html>
 <html>

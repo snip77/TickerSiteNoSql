@@ -1,6 +1,7 @@
 <?php
-	session_start();
-	if ( ! isset($_SESSION['username']))
+	require '../vendor/autoload.php';
+	use Helper\Session;
+	if ( ! Session::isset('username'))
 		header('location:../');
 ?>
 <!DOCTYPE html>
