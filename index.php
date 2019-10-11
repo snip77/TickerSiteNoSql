@@ -82,8 +82,6 @@ session_start(); ?>
 			    	<?= $travel['price'].' Tooman' ?>
 			    </data>
 		    </div>
-		    <br>
-		    <a href="travel/buy.php?id=<?= $travel_id ?>" class="btn btn-primary buy-btn">Buy</a>
 		  </div>
 		</div>
 		<br>

@@ -50,8 +50,6 @@ $times=date_range($startDate[0].'-'.$startDate[1].'-01', $endDate[0].'-'.$endDat
                         <?= $travel['price'].' Tooman' ?>
                     </data>
                     </div>
-                    <br>
-                    <a href="buy.php?id=<?= $travel_id ?>" class="btn btn-primary buy-btn">Buy</a>
                 </div>
             </div>
             <br>

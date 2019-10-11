@@ -35,6 +35,13 @@ use Helper\Message;
 	$fromToDateTravels=Redis::getArray($redis, $fromtodate);
 	$recentTravels=Redis::getArray($redis, 'Recent Travels');
 	$companyIdYearMonthTravels=Redis::getArray($redis, $companyIdYearMonth);
+	
+	if (count($recentTravels)==100) {
+		$keys=[];
+		foreach ($recentTravels as $key => $value)
+			array_push($keys, $key);
+		unset($recentTravels[min($keys)]);	
+	}
 
 	$recentTravels[$travelCode]=$travel_data;
 	$fromToDateTravels[$travelCode]=$travel_data;

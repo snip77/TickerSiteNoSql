@@ -39,9 +39,6 @@ body{
 .card{
 	margin-left: 12%;
 }
-.buy-btn{
-	float: right;
-}
 .travel-info{
 	display: flex;
 	justify-content: space-between;
