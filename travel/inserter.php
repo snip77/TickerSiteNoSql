@@ -2,6 +2,7 @@
 
 require '../vendor/autoload.php';
 
+use Redis\Redis;
 use Helper\Message;
 if (
 	(!isset($_POST['from']))||
@@ -15,8 +16,6 @@ if (
 	) {
 	header('location:insert.php');
 }
-require '../vendor/autoload.php';
-use Redis\Redis;
 $redis=Redis::connect();
 
 $travel_data=[

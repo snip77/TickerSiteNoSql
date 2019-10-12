@@ -21,15 +21,15 @@ if (Session::isset('username'))
 	<form class="form"action="registerer.php" method="POST">
 	  <div class="form-group">
 	    <label for="username">Username</label>
-	    <input name="username" type="text" class="form-control" id="username" placeholder="Enter username">
+	    <input required name="username" type="text" class="form-control" id="username" placeholder="Enter username">
 	  </div>
 	  <div class="form-group">
 	    <label for="email">email</label>
-	    <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+	    <input required name="email" type="email" class="form-control" id="email" placeholder="Email">
 	  </div>
 	  <div class="form-group">
 	    <label for="password">Password</label>
-	    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+	    <input required name="password" type="password" class="form-control" id="password" placeholder="Password">
 	  </div>
 	  <button type="submit" class="btn btn-warning login-btn">Sign up</button>
 	</form>
