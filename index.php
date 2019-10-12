@@ -23,10 +23,16 @@ use Helper\Session;
 		</div>
 	<?php endif ?>
 	<?php if (Session::isset('username')): ?>
-		<a type="button" class="btn btn-dark logout-btn" href="auth/logout.php">Log out</a>
-		<a type="button" class="btn btn-warning profile-btn" href="travel/insert.php">Add Travel</a>
-		<a type="button" class="btn btn-danger profile-btn" href="travel/search.php">Search</a>
-		<a type="button" class="btn btn-primary logout-btn" href="Company/insert.php">Create Company</a>
+		<a type="button" class="btn btn-danger logout-btn" href="auth/logout.php">Log out</a>
+		<a type="button" class="btn btn-dark profile-btn" href="travel/search.php">Search</a>
+		<a type="button" class="btn btn-warning profile-btn" href="travel/insert.php">
+			<img src="../images/add.svg">
+			Travel
+		</a>
+		<a type="button" class="btn btn-secondary logout-btn" href="Company/insert.php">
+			<img src="../images/add.svg">
+			Company
+		</a>
 	<?php else: ?>
 		<a type="button" class="btn btn-dark login-btn" href="auth/login.php">Log in</a>
 		<a type="button" class="btn btn-warning signup-btn" href="auth/signUp.php">Sign Up</a>

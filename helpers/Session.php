@@ -7,8 +7,8 @@ class Session
 
 	public static function start()
 	{
-		if (is_null($_SESSION))
-			session_start();
+		if (session_status() == PHP_SESSION_NONE)
+		    session_start();
 	}
 
 	public static function get($key)
