@@ -1,6 +1,6 @@
 {
     "name": "IMDB/TicketSiteNoSql",
-    "description": "Manage Redis servers",
+    "description": "First Workout for Database Systems Implementation course in zanjan university",
     "keywords": ["nosql", "redis", "predis"],
     "require": {
         "php": "^7.1.3",
