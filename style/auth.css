@@ -6,7 +6,7 @@ body{
 	margin-top: 15%;
 	margin-left: 10%;
 }
-.login-btn{
+.login-btn,.SignUp-btn{
 	width: 100%;
 	margin-top: 10px;
 }

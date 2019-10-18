@@ -31,7 +31,7 @@ if (Session::isset('username'))
 	    <label for="password">Password</label>
 	    <input required name="password" type="password" class="form-control" id="password" placeholder="Password">
 	  </div>
-	  <button type="submit" class="btn btn-warning login-btn">Sign up</button>
+	  <button type="submit" class="btn btn-warning SignUp-btn">Sign up</button>
 	</form>
 </body>
 </html>
