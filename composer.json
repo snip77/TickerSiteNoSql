@@ -1,5 +1,5 @@
 {
-    "name": "IMDB/TicketSiteNoSql",
+    "name": "IMDB/TicketSiteRedis",
     "description": "First Workout for Database Systems Implementation course in zanjan university",
     "keywords": ["nosql", "redis", "predis"],
     "require": {
