@@ -74,7 +74,7 @@
 			  	$redis=Redis::connect();
 			  	$companies=Redis::getArray($redis, 'companies');
 			  	foreach ($companies as $company_id => $cpmpany_data): ?>
-					<option value="<?= $company_id ?>"><?= $cpmpany_data['name'] ?></option>
+					<option ation value="<?= $company_id ?>"><?= $cpmpany_data['name'] ?></option>
 				<?php endforeach ?>
 		</select>
 	  <button type="submit" class="btn btn-warning create-btn">Create</button>
