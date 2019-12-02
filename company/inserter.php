@@ -10,6 +10,6 @@ $redis=Redis::connect();
 $companys=Redis::getArray($redis, 'companies');
 $company_id=time();
 $companies[$company_id]=['name'=>$_POST['name']];
-$redis->set('companies', json_encode($companies));
+Redis::setArray($redis, 'companies', $companies);
 Message::set('Company created');
 header("location:../index.php");

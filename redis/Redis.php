@@ -5,7 +5,8 @@ use Predis\Client;
 
 class Redis
 {
-	public static function connect(){
+	public static function connect()
+	{
 		return new Client([
 		    'scheme' => 'tcp',
 		    'host'   => '127.0.0.1',
@@ -13,10 +14,16 @@ class Redis
 		]);
 	}
 
-	public static function getArray($redis, $key){
+	public static function getArray($redis, $key)
+	{
 		$data=$redis->get($key);
 		if (is_null($data))
 			return [];
 		return json_decode($data, true);
+	}
+	
+	public static function setArray($redis, $key, $value)
+	{
+		$redis->set($key, json_encode($value));
 	}
 }

@@ -47,10 +47,10 @@ $recentTravels[$travelCode]=$travel_data;
 $fromToDateTravels[$travelCode]=$travel_data;
 $companyIdYearMonthTravels[$travelCode]=$travel_data;
 
-$redis->set($travelCode, json_encode($travel_data));
-$redis->set($fromtodate, json_encode($fromToDateTravels));
-$redis->set('Recent Travels', json_encode($recentTravels));
-$redis->set($companyIdYearMonth, json_encode($companyIdYearMonthTravels));
+Redis::setArray($redis, $travelCode, $travel_data);
+Redis::setArray($redis, $fromtodate, $fromToDateTravels);
+Redis::setArray($redis, 'Recent Travels', $recentTravels);
+Redis::setArray($redis, $companyIdYearMonth, $companyIdYearMonthTravels);
 
 Message::set('travel created');
 header("location:../index.php");
