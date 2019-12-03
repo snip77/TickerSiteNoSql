@@ -17,7 +17,6 @@ if (
 	header('location:insert.php');
 }
 $redis=Redis::connect();
-
 $travel_data=[
 	"to"=>$_POST["to"],
 	"from"=>$_POST["from"],
@@ -26,7 +25,6 @@ $travel_data=[
 	"price"=>$_POST["price"],
 	"capacity"=>$_POST["capacity"]
 ];
-
 $travelCode=time();
 $date=explode('-', $_POST['date']);
 $fromtodate=$_POST['from'].'-'.$_POST['to'].'-'.$_POST['date'];

@@ -60,8 +60,8 @@ $times=date_range($startDate[0].'-'.$startDate[1].'-01', $endDate[0].'-'.$endDat
             </div>
             <br>
     <?php
-    endif;
-    endforeach;
+            endif;
+        endforeach;
     endforeach;
     if ($counter==0): ?>
         <div class="empty-title">
@@ -79,6 +79,5 @@ $times=date_range($startDate[0].'-'.$startDate[1].'-01', $endDate[0].'-'.$endDat
             </div>
         </div>
     <?php endif ?>
-
 </body>
 </html>

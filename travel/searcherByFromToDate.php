@@ -37,31 +37,31 @@ $response=Redis::getArray($redis, $fromtodate);
 			</div>
 		</div>
 	<?php else: ?>
-	<?php foreach ($response as $travel_id => $travel): ?>
-		<div class="card w-75">
-		  <div class="card-body">
-		  	<div class="travel-info">
-			    <h5 class="card-title">
-			    	<img src="../images/train.svg">
-			    	<?= $travel['from'].' - '.$travel['to'] ?>
-			    </h5>
-			    <data class="card-text">
-			    	<img src="../images/time.svg">
-			    	<?= $travel['time'] ?>
-			    </data>
-			    <data class="card-text date">
-			    	<img src="../images/date.svg">
-			    	<?= $travel['date'] ?>
-			    </data>
-			    <data class="card-text date">
-			    	<img src="../images/money.svg">
-			    	<?= $travel['price'].' Tooman' ?>
-			    </data>
-		    </div>
-		  </div>
-		</div>
-		<br>
-	<?php endforeach ?>
+		<?php foreach ($response as $travel_id => $travel): ?>
+			<div class="card w-75">
+			  <div class="card-body">
+			  	<div class="travel-info">
+				    <h5 class="card-title">
+				    	<img src="../images/train.svg">
+				    	<?= $travel['from'].' - '.$travel['to'] ?>
+				    </h5>
+				    <data class="card-text">
+				    	<img src="../images/time.svg">
+				    	<?= $travel['time'] ?>
+				    </data>
+				    <data class="card-text date">
+				    	<img src="../images/date.svg">
+				    	<?= $travel['date'] ?>
+				    </data>
+				    <data class="card-text date">
+				    	<img src="../images/money.svg">
+				    	<?= $travel['price'].' Tooman' ?>
+				    </data>
+			    </div>
+			  </div>
+			</div>
+			<br>
+		<?php endforeach ?>
 	<?php endif ?>
 </body>
 </html>

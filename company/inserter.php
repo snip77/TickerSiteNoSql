@@ -3,9 +3,9 @@ require '../vendor/autoload.php';
 
 use Redis\Redis;
 use Helper\Message;
-if (!isset($_POST['name'])) {
+if (!isset($_POST['name']))
 	header('location:insert.php');
-}
+
 $redis=Redis::connect();
 $companys=Redis::getArray($redis, 'companies');
 $company_id=time();
